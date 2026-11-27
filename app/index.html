@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Black Friday Deal Finder 2026 — 20 Real Deals, Verified</title>
+<meta name="description" content="20 real Black Friday 2026 deals from Best Buy, Samsung and Target. Every price was checked on the retailer's own product page on 2026-11-27. No invented prices, no placeholders.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <p class="kicker">BLACK FRIDAY · CYBER MONDAY 2026</p>
+  <h1>Black Friday Deal Finder</h1>
+  <p class="sub">20 real deals. Every price was read off the retailer's own product
+  page on <strong>27 Nov 2026</strong> — no roundup prices, no guesses, no
+  placeholders. Click any deal to open the retailer's page.</p>
+  <p class="updated">Last updated: <span id="updated">2026-11-27 14:45 (Beijing)</span></p>
+  <div class="stats" id="stats"></div>
+  <div class="top3" aria-label="Biggest discounts">
+    <span class="top3-label">Biggest discounts</span>
+    <a href="https://www.bestbuy.com/product/sony-wh-1000xm5-wireless-noise-cancelling-over-the-ear-headphones-black/J7XSRH5CXG" target="_blank" rel="noopener">Sony WH-1000XM5 · <b>−57.3%</b> · $169.99</a>
+    <a href="https://www.bestbuy.com/product/samsung-65-class-s84h-series-oled-4k-uhd-samsungvision-ai-smart-tizen-tv-2026/JJGRF87Q6W/sku/6689681" target="_blank" rel="noopener">Samsung S84H OLED 65″ · <b>−57.1%</b> · $899.99</a>
+    <a href="https://www.target.com/p/dyson-v9-motorbar-cordless-vacuum-9-8-34-cleaning-path-nickel/-/A-1011912746" target="_blank" rel="noopener">Dyson V9 · <b>−55.0%</b> · $269.99</a>
+  </div>
+</header>
+
+<main>
+  <noscript>
+    <p class="noscript-note">This deal finder renders its 20 verified deals with
+    JavaScript. With JavaScript off, the full list is still available in the
+    deal sheet: <a href="deals.csv">deals.csv</a> (title, retailer, price,
+    was price, discount, retailer link, check time).</p>
+  </noscript>
+  <section class="controls" aria-label="Find a deal">
+    <input id="search" type="search" placeholder="Search deals — try “AirPods”, “OLED”, “Dyson”…" autocomplete="off" aria-label="Search deals">
+    <div class="filter-row" id="retailerFilters" aria-label="Filter by retailer"></div>
+    <div class="filter-row" id="categoryFilters" aria-label="Filter by category"></div>
+    <div class="sort-row">
+      <label for="sort">Sort by</label>
+      <select id="sort">
+        <option value="discount-desc">Biggest discount %</option>
+        <option value="savings-desc">Biggest saving ($)</option>
+        <option value="price-asc">Price: low to high</option>
+        <option value="price-desc">Price: high to low</option>
+        <option value="title-asc">Name A–Z</option>
+      </select>
+      <span class="count" id="count"></span>
+    </div>
+  </section>
+
+  <section class="deals" id="deals" aria-live="polite"></section>
+
+  <p class="empty" id="empty" hidden>No deals match. Try a different search or clear a filter.</p>
+
+  <section class="how" aria-label="How these deals were verified">
+    <h2>How we know these are real deals</h2>
+    <ol>
+      <li><strong>Checked on the retailer's own page.</strong> Each price below is the
+      price shown on Best Buy, Samsung or Target's product page at the check
+      time printed on the card — not a price copied from a deals blog.</li>
+      <li><strong>The “was” price is the retailer's own.</strong> It is the comparison /
+      regular price the retailer itself prints next to the sale price.</li>
+      <li><strong>Real-deal signal.</strong> <span class="tag hot">HOT</span> means 40%+
+      off, <span class="tag good">GOOD</span> means 25–39% off,
+      <span class="tag ok">OK</span> means under 25% off. A small discount is still
+      listed, but labelled honestly.</li>
+      <li><strong>Prices move.</strong> Retailers can change a price or sell out. The
+      check time on each card tells you how fresh the number is; the link goes
+      straight to the retailer so you can confirm before you buy.</li>
+    </ol>
+    <p class="fineprint">Deals verified 27 Nov 2026, Beijing time. This page is a static
+    site: no tracking, no ads, no external scripts, styles or images — it works
+    offline once loaded. Prices in USD.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Black Friday Deal Finder 2026 · 20 verified deals · Best Buy · Samsung · Target</p>
+</footer>
+
+<script src="data.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

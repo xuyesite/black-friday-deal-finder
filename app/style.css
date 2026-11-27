@@ -1,0 +1,369 @@
+/* Black Friday Deal Finder 2026 — hand-written stylesheet.
+   No external fonts, images or frameworks. System font stack only. */
+
+:root {
+  --bg: #0d0d10;
+  --bg2: #16161c;
+  --card: #1c1c24;
+  --card-border: #2c2c38;
+  --text: #f2f0ea;
+  --muted: #a9a7b3;
+  --gold: #f5b301;
+  --gold-dark: #c98f00;
+  --red: #e5484d;
+  --green: #3fb950;
+  --chip: #26262f;
+  --chip-active: #f5b301;
+  --radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+}
+
+a { color: var(--gold); }
+
+/* ---------- header ---------- */
+.hero {
+  padding: 40px 20px 28px;
+  text-align: center;
+  background:
+    radial-gradient(700px 260px at 50% -60px, rgba(245, 179, 1, 0.22), transparent 70%),
+    linear-gradient(180deg, #17171f 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.kicker {
+  margin: 0 0 8px;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+}
+
+.sub {
+  max-width: 640px;
+  margin: 0 auto 12px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.sub strong { color: var(--text); }
+
+.updated {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.updated span { color: var(--gold); font-weight: 600; }
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.stat {
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 14px;
+}
+
+.stat b { color: var(--gold); font-size: 16px; }
+
+.top3 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.top3-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.top3 a {
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 13.5px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.top3 a:hover { border-color: var(--gold); }
+
+.top3 a b { color: var(--red); }
+
+.noscript-note {
+  margin: 20px 0 0;
+  padding: 14px 16px;
+  background: #2a2113;
+  border: 1px solid var(--gold-dark);
+  border-radius: 10px;
+  font-size: 14.5px;
+}
+
+/* ---------- controls ---------- */
+main { max-width: 1080px; margin: 0 auto; padding: 0 16px 40px; }
+
+.controls {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(13, 13, 16, 0.96);
+  padding: 16px 0 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+#search {
+  width: 100%;
+  padding: 13px 16px;
+  font-size: 16px;
+  color: var(--text);
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  outline: none;
+}
+
+#search:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(245, 179, 1, 0.25); }
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chip {
+  padding: 7px 13px;
+  font-size: 13.5px;
+  color: var(--text);
+  background: var(--chip);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.chip:hover { border-color: var(--gold); }
+
+.chip.active {
+  background: var(--chip-active);
+  border-color: var(--chip-active);
+  color: #111;
+  font-weight: 700;
+}
+
+.sort-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.sort-row select {
+  padding: 8px 10px;
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+
+.count { margin-left: auto; }
+
+/* ---------- deal cards ---------- */
+.deals {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.card:hover { border-color: var(--gold-dark); }
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.retailer {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.retailer.samsung { color: #7aa5ff; }
+.retailer.target { color: #ff6b6b; }
+
+.category {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 17px;
+  line-height: 1.35;
+  font-weight: 650;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 2px;
+}
+
+.price {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--gold);
+}
+
+.was {
+  font-size: 15px;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.save {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.tag {
+  display: inline-block;
+  margin-left: auto;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.tag.hot { background: var(--red); color: #fff; }
+.tag.good { background: #2f6f3a; color: #c9f2cf; }
+.tag.ok { background: #3a3a46; color: #d6d4de; }
+
+.note {
+  margin: 8px 0 12px;
+  font-size: 13.5px;
+  color: var(--muted);
+}
+
+.checked {
+  margin: 0 0 14px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.checked::before { content: "✓ Verified "; color: var(--green); font-weight: 700; }
+
+.view {
+  margin-top: auto;
+  display: block;
+  text-align: center;
+  padding: 11px 14px;
+  background: var(--gold);
+  color: #111;
+  font-weight: 750;
+  font-size: 15px;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.view:hover { background: #ffc82e; }
+
+.empty {
+  margin: 32px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+/* ---------- how / footer ---------- */
+.how {
+  margin-top: 36px;
+  padding: 22px;
+  background: var(--bg2);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+}
+
+.how h2 { margin: 0 0 12px; font-size: 20px; }
+
+.how ol { margin: 0; padding-left: 22px; color: var(--muted); }
+
+.how li { margin-bottom: 8px; }
+.how li strong { color: var(--text); }
+
+.fineprint { margin: 14px 0 0; font-size: 13px; color: var(--muted); }
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13px;
+  border-top: 1px solid var(--card-border);
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 560px) {
+  .hero { padding: 28px 16px 20px; }
+  .sub { font-size: 15px; }
+  .deals { grid-template-columns: 1fr; }
+  .price { font-size: 27px; }
+  .sort-row { flex-wrap: wrap; }
+  .count { margin-left: 0; }
+}
